@@ -109,7 +109,7 @@ function JobDetail() {
 
           <Section title="Skills">
             <div className="flex flex-wrap gap-2">
-              {job.skills.map((skill) => (
+              {job.skills.map((skill: string) => (
                 <Badge key={skill} variant="outline">
                   {skill}
                 </Badge>
