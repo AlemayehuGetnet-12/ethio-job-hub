@@ -20,7 +20,7 @@ import {
   locations,
 } from "@/data/marketplace";
 
-export const Route = createFileRoute("/jobs")({
+export const Route = createFileRoute("/jobs/")({
   head: () => ({
     meta: [
       { title: "Browse Jobs in Ethiopia — EthioJobs Connect" },
