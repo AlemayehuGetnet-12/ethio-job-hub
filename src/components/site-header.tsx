@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { useQueryClient } from "@tanstack/react-query";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -6,6 +7,8 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useAuth } from "@/hooks/use-auth";
+import { supabase } from "@/integrations/supabase/client";
 
 const nav = [
   { to: "/jobs", label: "Browse Jobs" },
@@ -15,6 +18,17 @@ const nav = [
 ] as const;
 
 export function SiteHeader() {
+  const { session, loading } = useAuth();
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+
+  async function handleSignOut() {
+    await queryClient.cancelQueries();
+    queryClient.clear();
+    await supabase.auth.signOut();
+    void navigate({ to: "/auth", replace: true });
+  }
+
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center gap-6 px-5">
@@ -41,12 +55,26 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 md:ml-0">
-          <Button variant="ghost" size="sm" className="hidden sm:inline-flex" asChild>
-            <Link to="/jobs">Sign in</Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link to="/jobs">Post a job</Link>
-          </Button>
+          {loading ? null : session ? (
+            <>
+              <Button variant="ghost" size="sm" className="hidden sm:inline-flex" asChild>
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+              <Button variant="outline" size="sm" onClick={() => void handleSignOut()}>
+                Sign out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant="ghost" size="sm" className="hidden sm:inline-flex" asChild>
+                <Link to="/auth">Sign in</Link>
+              </Button>
+              <Button size="sm" asChild>
+                <Link to="/auth">Post a job</Link>
+              </Button>
+            </>
+          )}
+
 
           <Sheet>
             <SheetTrigger asChild>
