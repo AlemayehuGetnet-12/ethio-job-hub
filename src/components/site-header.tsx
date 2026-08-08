@@ -55,12 +55,26 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 md:ml-0">
-          <Button variant="ghost" size="sm" className="hidden sm:inline-flex" asChild>
-            <Link to="/jobs">Sign in</Link>
-          </Button>
-          <Button size="sm" asChild>
-            <Link to="/jobs">Post a job</Link>
-          </Button>
+          {loading ? null : session ? (
+            <>
+              <Button variant="ghost" size="sm" className="hidden sm:inline-flex" asChild>
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+              <Button variant="outline" size="sm" onClick={() => void handleSignOut()}>
+                Sign out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant="ghost" size="sm" className="hidden sm:inline-flex" asChild>
+                <Link to="/auth">Sign in</Link>
+              </Button>
+              <Button size="sm" asChild>
+                <Link to="/auth">Post a job</Link>
+              </Button>
+            </>
+          )}
+
 
           <Sheet>
             <SheetTrigger asChild>
