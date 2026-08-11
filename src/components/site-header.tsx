@@ -80,6 +80,9 @@ export function SiteHeader() {
                 <DropdownMenuItem asChild>
                   <Link to="/dashboard">Dashboard</Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/employer/jobs">Manage job listings</Link>
+                </DropdownMenuItem>
                 <DropdownMenuItem onSelect={() => void handleSignOut()}>
                   Sign out
                 </DropdownMenuItem>
@@ -92,8 +95,9 @@ export function SiteHeader() {
           )}
 
           <Button size="sm" asChild>
-            <Link to={isAuthenticated ? "/dashboard" : "/auth"}>Post a job</Link>
+            <Link to={isAuthenticated ? "/employer/jobs" : "/auth"}>Post a job</Link>
           </Button>
+
 
           <Sheet>
             <SheetTrigger asChild>
