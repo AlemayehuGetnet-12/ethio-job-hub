@@ -14,6 +14,81 @@ export type Database = {
   }
   public: {
     Tables: {
+      jobs: {
+        Row: {
+          category: string
+          company_name: string
+          created_at: string
+          currency: string
+          deadline: string | null
+          description: string
+          education: string
+          employer_id: string
+          employment_type: string
+          experience: string
+          id: string
+          location: string
+          published_at: string | null
+          remote: boolean
+          requirements: string[]
+          responsibilities: string[]
+          salary_max: number
+          salary_min: number
+          skills: string[]
+          status: Database["public"]["Enums"]["job_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          company_name?: string
+          created_at?: string
+          currency?: string
+          deadline?: string | null
+          description?: string
+          education?: string
+          employer_id: string
+          employment_type?: string
+          experience?: string
+          id?: string
+          location?: string
+          published_at?: string | null
+          remote?: boolean
+          requirements?: string[]
+          responsibilities?: string[]
+          salary_max?: number
+          salary_min?: number
+          skills?: string[]
+          status?: Database["public"]["Enums"]["job_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          company_name?: string
+          created_at?: string
+          currency?: string
+          deadline?: string | null
+          description?: string
+          education?: string
+          employer_id?: string
+          employment_type?: string
+          experience?: string
+          id?: string
+          location?: string
+          published_at?: string | null
+          remote?: boolean
+          requirements?: string[]
+          responsibilities?: string[]
+          salary_max?: number
+          salary_min?: number
+          skills?: string[]
+          status?: Database["public"]["Enums"]["job_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           company_name: string | null
@@ -80,6 +155,7 @@ export type Database = {
     }
     Enums: {
       app_role: "job_seeker" | "employer" | "admin"
+      job_status: "draft" | "published" | "closed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -208,6 +284,7 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["job_seeker", "employer", "admin"],
+      job_status: ["draft", "published", "closed"],
     },
   },
 } as const
