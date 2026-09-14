@@ -1,10 +1,40 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Environment files (secrets)
 .env
-dist
-build
-.next
-.vite
-.DS_Store
+.env.local
+.env.*.local
+*.env
+
+# Build outputs
+dist/
+build/
+.next/
+.vite/
+out/
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Bun
+bun.lock
+bunfig.toml
+
+# Temp / scratch files
+query
+
+# Editor
+.vscode/
+.idea/
