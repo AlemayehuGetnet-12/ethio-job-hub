@@ -38,3 +38,14 @@ query
 # Editor
 .vscode/
 .idea/
+
+# Root-level Lovable / Vite artifacts (not part of backend or frontend)
+.lovable/
+.prettierignore
+.prettierrc
+AGENTS.md
+components.json
+eslint.config.js
+vite.config.ts
+tsconfig.json
+public/
