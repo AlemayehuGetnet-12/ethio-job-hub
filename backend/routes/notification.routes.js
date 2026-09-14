@@ -5,7 +5,8 @@ import { protect, authorizeRoles } from '../middleware/auth.middleware.js';
 const router = express.Router();
 
 router.get('/', protect, listNotifications);
-router.post('/', protect, authorizeRoles('admin'), createNotification); // only admin can create arbitrary notifications
+router.post('/', protect, authorizeRoles('admin'), createNotification);
 router.post('/:id/read', protect, markAsRead);
+router.put('/:id/read', protect, markAsRead);   // alias used by frontend
 
 export default router;

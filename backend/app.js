@@ -13,6 +13,7 @@ import notificationRoutes from "./routes/notification.routes.js";
 import uploadRoutes from "./routes/upload.routes.js";
 import analyticsRoutes from "./routes/analytics.routes.js";
 import telegramRoutes from "./routes/telegram.routes.js";
+import adminRoutes from "./routes/admin.routes.js";
 import errorHandler from "./middleware/error.middleware.js";
 
 const app = express();
@@ -31,10 +32,12 @@ app.use("/api/applications", applicationRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/saved-jobs", savedJobRoutes);
+app.use("/api/savedjobs", savedJobRoutes);   // alias used by frontend
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/uploads", uploadRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/telegram', telegramRoutes);
+app.use('/api/admin', adminRoutes);
 
 // serve uploaded files statically from /uploads
 import path from 'path';
