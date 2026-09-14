@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "companies": "Companies",
+    "about": "About",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "login": "Login"
+  },
+  "footer": {
+    "description": "Connecting Ethiopian talent with trusted employers.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "dashboard": {
+    "jobs_posted": "Jobs posted",
+    "total_applicants": "Total applicants",
+    "upcoming_interviews": "Upcoming interviews",
+    "schedule_interview": "Schedule interview"
+  },
+  "interview": {
+    "scheduled_msg": "Your interview has been scheduled"
+  }
+}

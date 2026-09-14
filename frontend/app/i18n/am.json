@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "home": "መነሻ",
+    "jobs": "ስራዎች",
+    "companies": "ኩባንያዎች",
+    "about": "ስለ",
+    "contact": "አገናኝ",
+    "dashboard": "ዳሽቦርድ",
+    "login": "ግባ"
+  },
+  "footer": {
+    "description": "የኢትዮጵያ ችሎታን ከታማኝ የሥራ ቦታዎች ጋር አገናኝ",
+    "privacy": "የግል ንብረት",
+    "terms": "ውሎ ሁኔታዎች"
+  },
+  "dashboard": {
+    "jobs_posted": "የተለጠፉ ስራዎች",
+    "total_applicants": "አጠቃላይ መደረሻዎች",
+    "upcoming_interviews": "የቀጣይ ቃለ-መገናኛዎች",
+    "schedule_interview": "ቃለ-መገናኛ ያዘጋጁ"
+  },
+  "interview": {
+    "scheduled_msg": "ቃለ-መገናኛዎ ታዘጋጅቷል"
+  }
+}

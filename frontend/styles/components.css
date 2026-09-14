@@ -1,0 +1,13 @@
+/* Component helper classes and CSS layers for when utilities become verbose
+   Keep components small and prefer Tailwind utilities. Use these sparingly.
+*/
+
+.btn-primary {
+  @apply rounded-full px-5 py-3 text-sm font-semibold text-white;
+  background: var(--primary);
+}
+
+.card {
+  @apply rounded-2xl p-6 border border-slate-800;
+  background: var(--card);
+}

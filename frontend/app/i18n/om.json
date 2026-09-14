@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "home": "Mana",
+    "jobs": "Hojiiwwan",
+    "companies": "Waa'ee Dhaabbilee",
+    "about": "Waggaa",
+    "contact": "Quunnamtii",
+    "dashboard": "Daashboordii",
+    "login": "Seeni"
+  },
+  "footer": {
+    "description": "Dandeettii Itoophiyaa waliin dhiyeessu dhaabbilee amanamoo waliin.",
+    "privacy": "Ittisa dhuunfaa",
+    "terms": "Heera"
+  },
+  "dashboard": {
+    "jobs_posted": "Hojiiwwan maxxanfaman",
+    "total_applicants": "Guutuu namoota galmeessan",
+    "upcoming_interviews": "Walgahii dhufaa jiru",
+    "schedule_interview": "Walgahii qopheessi"
+  },
+  "interview": {
+    "scheduled_msg": "Walgahii kee qophaa'eera"
+  }
+}

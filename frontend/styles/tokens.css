@@ -1,0 +1,23 @@
+:root {
+  /* Color tokens (mapped from tailwind theme) */
+  --primary: #1d4ed8;
+  --accent: #f97316;
+  --gold: #d4af37;
+  --gold-dark: #b8962e;
+  --bg: #020617;
+  --card: #0b1220;
+  --muted: #94a3b8;
+  --fg: #e2e8f0;
+
+  /* Spacing tokens */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+
+  /* Border radius tokens */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+}
