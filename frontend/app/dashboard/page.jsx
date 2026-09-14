@@ -1,7 +1,5 @@
 import Link from "next/link";
-import dynamic from 'next/dynamic';
-
-const TelegramSubscriptions = dynamic(() => import('../components/TelegramSubscriptions'), { ssr: false });
+import TelegramSubscriptions from "../components/TelegramSubscriptions";
 
 export default function DashboardPage() {
   return (
@@ -21,14 +19,12 @@ export default function DashboardPage() {
             </Link>
           </div>
 
-          {/* Telegram subscriptions widget (embedded in dashboard) */}
           <div className="mt-8">
             <div className="rounded-3xl border border-slate-800 bg-slate-950 p-6">
               <h2 className="text-xl font-semibold">Alerts & integrations</h2>
               <p className="mt-2 text-slate-400">Manage Telegram job alerts and other integrations.</p>
               <div className="mt-4">
-              {/* Lazy-loaded Telegram subscriptions management UI */}
-              <TelegramSubscriptions />
+                <TelegramSubscriptions />
               </div>
             </div>
           </div>
