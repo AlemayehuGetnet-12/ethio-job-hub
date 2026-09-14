@@ -64,9 +64,10 @@ export default function CompaniesPage() {
             </div>
           ) : (
             companies.map((company, index) => (
-              <article
+              <Link
                 key={company._id || company.id || company.name || index}
-                className="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:border-primary"
+                href={company._id || company.id ? `/companies/${company._id || company.id}` : "#"}
+                className="block rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:border-primary"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-800 text-lg font-semibold text-white">
                   {(company.name || "C").charAt(0).toUpperCase()}
@@ -78,7 +79,7 @@ export default function CompaniesPage() {
                 <p className="mt-1 text-sm text-slate-500">
                   {company.location || company.city || "Location pending"}
                 </p>
-              </article>
+              </Link>
             ))
           )}
         </div>
